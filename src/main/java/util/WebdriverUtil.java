@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebdriverUtil {
-    public WebDriver getWebDriver(String navegador, String pathChromeDriver) throws NavegadorNaoIdentificadoException, DriverException {
+    public static WebDriver getWebDriver(String navegador, String pathChromeDriver) throws NavegadorNaoIdentificadoException, DriverException {
         WebDriver webDriver;
         NavegadoresEnum navegadorEnum;
         try {
@@ -37,7 +37,7 @@ public class WebdriverUtil {
         return webDriver;
     }
 
-    private WebDriver getChromeWebDriver(String pathChromeDriver) throws DriverException {
+    private static WebDriver getChromeWebDriver(String pathChromeDriver) throws DriverException {
         try {
             System.setProperty("webdriver.chrome.driver", pathChromeDriver);
             return new ChromeDriver();
@@ -47,7 +47,7 @@ public class WebdriverUtil {
         }
     }
 
-    private WebDriver getFirefoxWebDriver(String pathChromeDriver) throws DriverException {
+    private static WebDriver getFirefoxWebDriver(String pathChromeDriver) throws DriverException {
         try {
             System.setProperty("webdriver.gecko.driver", pathChromeDriver);
             return new FirefoxDriver();
