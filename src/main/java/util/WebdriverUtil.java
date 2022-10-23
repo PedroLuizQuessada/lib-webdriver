@@ -94,10 +94,10 @@ public class WebdriverUtil {
         }
     }
 
-    public void fecharNavegador(WebDriver webDriver) throws FecharNavegadorException {
+    public static void fecharNavegador(WebDriver webDriver) throws FecharNavegadorException {
         try {
             TimerUtil.aguardar(UnidadesMedidaTempoEnum.SEGUNDOS, 2);
-            webDriver.quit();
+            webDriver.close();
         }
         catch (Exception e) {
             throw new FecharNavegadorException();
